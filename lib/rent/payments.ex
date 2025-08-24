@@ -27,6 +27,10 @@ defmodule Rent.Payments do
     |> Repo.all()
   end
 
+  def list_payments_with_house_and_apartment do
+    Repo.all(from p in Payment, preload: [house: :apartment])
+  end
+
   @doc """
   Gets a single payment.
 
