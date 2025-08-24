@@ -248,7 +248,7 @@ defmodule RentWeb.HouseLive.Show do
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm font-medium text-gray-900">
-                  ${if payment.amount,
+                  KES{if payment.amount,
                     do: :erlang.float_to_binary(payment.amount / 100, decimals: 2),
                     else: "0.00"}
                 </div>

@@ -20,7 +20,7 @@ defmodule RentWeb.Router do
   scope "/", RentWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", HomeLive.Index, :index
 
     live "/apartments", ApartmentLive.Index, :index
     live "/apartments/new", ApartmentLive.Index, :new
