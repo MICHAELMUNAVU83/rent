@@ -7,6 +7,7 @@ defmodule Rent.Payments.Payment do
     field :customer_name, :string
     field :customer_email, :string
     field :customer_phone_number, :string
+    field :amount, :integer
     field :is_complete, :boolean, default: false
     belongs_to :house, Rent.Houses.House
 
@@ -22,6 +23,7 @@ defmodule Rent.Payments.Payment do
       :customer_phone_number,
       :month,
       :is_complete,
+      :amount,
       :house_id
     ])
     |> validate_required([

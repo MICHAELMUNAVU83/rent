@@ -9,7 +9,7 @@ defmodule RentWeb.Components.Sidebar do
     ~H"""
     <aside class={["w-64 bg-white border-r border-gray-200 flex flex-col h-screen", @class]}>
       <!-- Logo/Brand Section -->
-      <div class="p-6 border-b border-gray-200">
+      <div class="p-5 border-b border-gray-200">
         <div class="flex items-center space-x-3">
           <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
             <.icon name="hero-building-office-2" class="w-6 h-6 text-white" />
@@ -49,21 +49,20 @@ defmodule RentWeb.Components.Sidebar do
     <!-- Divider -->
         <div class="border-t border-gray-200 my-4"></div>
 
-        <.nav_item path="/tenants" current_path={@current_path} icon="hero-users" label="Tenants" />
-
-        <.nav_item
-          path="/reports"
-          current_path={@current_path}
-          icon="hero-document-chart-bar"
-          label="Reports"
-        />
-
         <.nav_item
           path="/settings"
           current_path={@current_path}
           icon="hero-cog-6-tooth"
           label="Settings"
         />
+
+        <.link
+          href="/users/log_out"
+          method="delete"
+          class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+        >
+          <.icon name="hero-arrow-left-on-rectangle" class="w-5 h-5 mr-3 text-gray-500" /> Log out
+        </.link>
       </nav>
       
     <!-- User Profile Section -->

@@ -21,6 +21,12 @@ defmodule Rent.Payments do
     Repo.all(Payment)
   end
 
+  def list_payments_by_house(house_id) do
+    Payment
+    |> where([p], p.house_id == ^house_id)
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single payment.
 

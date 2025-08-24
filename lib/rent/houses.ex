@@ -21,6 +21,10 @@ defmodule Rent.Houses do
     Repo.all(House)
   end
 
+  def get_house_with_apartment(id) do
+    Repo.get!(House, id) |> Repo.preload(:apartment)
+  end
+
   def list_all_houses_with_apartments do
     Repo.all(from h in House, where: not is_nil(h.apartment_id), preload: [:apartment])
   end
