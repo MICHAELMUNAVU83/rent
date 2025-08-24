@@ -111,7 +111,7 @@ defmodule RentWeb.PaymentLive.Index do
       />
       <.stat_card_small
         title="Total Revenue"
-        value={"KES #{@streams.payments.inserts |> Enum.filter(fn {_,_, p, _} -> p.is_complete end) |> Enum.map(fn {_, p} -> p.amount || 0 end) |> Enum.sum()}"}
+        value={"KES #{@streams.payments.inserts |> Enum.filter(fn {_,_, p, _} -> p.is_complete end) |> Enum.map(fn {_,_, p, _} -> p.amount || 0 end) |> Enum.sum() }"}
         icon="hero-currency-dollar"
         color="purple"
       />
